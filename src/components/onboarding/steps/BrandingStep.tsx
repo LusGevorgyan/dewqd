@@ -8,7 +8,7 @@ import { StepHeader } from "@/components/onboarding/StepHeader";
 import { getInitials } from "@/utils/stringUtils";
 
 export const BrandingStep = () => {
-    const { register, control, watch } = useFormContext<OnboardingFormValues>();
+    const { register, control, watch, formState: { errors } } = useFormContext<OnboardingFormValues>();
     const companyName = watch("companyName");
     const initials = getInitials(companyName);
 
@@ -22,12 +22,14 @@ export const BrandingStep = () => {
             <Controller
                 name="logo"
                 control={control}
+                rules={{ required: "Logo is required" }}
                 render={({ field }) => (
                     <FileUpload
                         {...field}
                         label="Logo(optional)"
                         required
                         initials={initials}
+                        error={errors.logo?.message}
                         onChange={(files) => {
                             field.onChange(files);
                         }}
@@ -39,7 +41,8 @@ export const BrandingStep = () => {
                 label="Description (optional)"
                 required
                 placeholder="Enter a description"
-                {...register("description")}
+                {...register("description", { required: "Description is required" })}
+                error={errors.description?.message}
             />
         </div>
     );
