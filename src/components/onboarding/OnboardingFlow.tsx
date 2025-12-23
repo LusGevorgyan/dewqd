@@ -61,7 +61,7 @@ export default function OnboardingFlow() {
 
           <FormProvider {...methods}>
             <form onSubmit={handleSubmit(onSubmit)}>
-              {steps[currentStep]}  
+              {steps[currentStep]}
 
               <div className="mt-section">
                 {currentStep === "CompanyInfoStep" ? (

@@ -79,7 +79,7 @@ export const FileUpload: React.FC<FileUploadProps> = ({
         <div className={`w-full ${className}`}>
             <FieldLabel label={label} required={required} />
             <div
-                className={`relative flex items-center rounded-xl border py-6 px-12 transition-all duration-200 border-border-primary bg-white`}
+                className={`relative flex sm:flex-row flex-col sm:gap-0 gap-6 items-center rounded-xl border py-6 px-12 transition-all duration-200 border-border-primary bg-white`}
                 onDragEnter={handleDragEnter}
                 onDragLeave={handleDragLeave}
                 onDragOver={handleDragOver}
@@ -110,7 +110,7 @@ export const FileUpload: React.FC<FileUploadProps> = ({
                     )}
                 </div>
 
-                <div className="flex flex-1 flex-col sm:items-center items-start">
+                <div className="flex flex-1 flex-col items-center">
                     <div className="group mb-2 flex cursor-pointer items-center justify-center rounded-full border border-gray-200 px-5 py-2.5 transition-colors hover:bg-gray-50 bg-white">
                         <span className="mr-1 text-sm text-gray-900">Drag and drop or</span>
                         <span className="text-sm font-medium text-blue-600 group-hover:text-blue-700">
