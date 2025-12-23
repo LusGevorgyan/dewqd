@@ -1,37 +1,86 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground-gradient: linear-gradient(126.75deg, rgba(69, 99, 199, 0) 3.98%, rgba(227, 233, 255, 0.385764) 48.85%, #FFFFFF 120.29%);
-  --foreground-gradient-primary: linear-gradient(208.32deg, #FFFFFF -1.36%, #5C92F8 82.49%);
-  --foreground-gradient-secondary: linear-gradient(180deg, #90B5FB 0%, #5C92F8 100%);
+  --background-primary: #ffffff;
 
-  --text-primary: #1E1E1E;
-  --text-secondary: #3F4552;
+  --gradient-primary: linear-gradient(126.75deg, rgba(69, 99, 199, 0) 3.98%, rgba(227, 233, 255, 0.385764) 48.85%, #FFFFFF 120.29%);
+  --gradient-secondary: linear-gradient(180deg, #90B5FB 0%, #5C92F8 100%);
+  --gradient-tertiary: linear-gradient(208.32deg, #FFFFFF -1.36%, #5C92F8 82.49%);
 
-  --color-grey-500: #96979C;
-  --color-blue-300: #5C92F8;
-  --color-blue-500: #0044C3;
+  --font-family-poppins: "Poppins", sans-serif;
 
-  --font-geist-poppins: "Poppins", sans-serif;
+  --text-primary: #1e1e1e;
+  --text-secondary: #3f4552;
+  --text-tertiary: #96979C;
+
+  --border-color-primary: rgba(150, 151, 156, 0.5);
+
+  --font-poppins: "Poppins", sans-serif;
+
+  --container-sm: 590px;
+  --container-md: 956px;
+
+  /* other vars */
+  --step-active: #0044C3;
+  --step-inactive: #96979C;
+  --radius-btn: 10px;
+  --gap-section: 50px;
+
+  /* font vars */
+  --font-size-18: 18px;
+  --font-size-30: 30px;
+  --font-size-10: 10px;
+  --spacing-82: 82px;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --bg-gradient: var(--foreground-gradient);
-  --font-poppins: var(--font-geist-poppins);
+
+html {
+  scroll-behavior: smooth;
 }
 
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-} */
 
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  user-select: none;
+  font-family: var(--font-family-poppins);
 }
 
+@theme {
+  /* backgrounds */
+  --background-color-primary: var(--background-primary);
+
+  /* text */
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-tertiary: var(--text-tertiary);
+
+  /* gradients */
+  --background-image-gradient-primary: var(--gradient-primary);
+  --background-image-gradient-secondary: var(--gradient-secondary);
+  --background-image-gradient-tertiary: var(--gradient-tertiary);
+
+  --color-border-primary: var(--border-color-primary);
+
+  /* Step Indicator */
+  --color-step-active: var(--step-active);
+  --color-step-inactive: var(--step-inactive);
+
+  /* Components */
+  --radius-button: var(--radius-btn);
+  --spacing-section: var(--gap-section);
+
+  /* Extended Spacing */
+  --spacing-30: 7.5rem;
+  --spacing-82: var(--spacing-82);
+
+  /* fonts */
+  --font-family-poppins: var(--font-poppins);
+  --text-18: var(--font-size-18);
+  --text-30: var(--font-size-30);
+  --text-10: var(--font-size-10);
+
+  --max-width-container-sm: var(--container-sm);
+  --max-width-container-md: var(--container-md);
+}

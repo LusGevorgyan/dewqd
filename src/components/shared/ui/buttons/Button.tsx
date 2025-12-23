@@ -6,17 +6,15 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     children?: React.ReactNode;
 }
 
-export const Button: React.FC<ButtonProps> = ({ 
-    text, 
-    children, 
-    variant = "primary", 
-    className, 
-    ...props 
+export const Button: React.FC<ButtonProps> = ({
+    text,
+    children,
+    variant = "primary",
+    className,
+    ...props
 }) => {
-    const base = "mt-2 w-full py-3 rounded-lg text-sm font-medium text-white transition hover:opacity-90 flex justify-center items-center gap-2";
-    const style = variant === "primary"
-        ? "bg-gradient-to-r from-blue-500 to-indigo-600"
-        : "bg-gray-400 hover:bg-gray-500";
+    const base = "cursor-pointer w-full py-3 rounded-button text-sm font-semibold text-white text-sm transition hover:opacity-90 place-items-center";
+    const style = variant === "primary" && "bg-gradient-secondary"
 
     return (
         <button className={`${base} ${style} ${className || ""}`} {...props}>
@@ -24,3 +22,6 @@ export const Button: React.FC<ButtonProps> = ({
         </button>
     );
 };
+
+Button.displayName = "Button";
+
